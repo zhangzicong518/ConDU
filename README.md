@@ -2,6 +2,16 @@
 
 This is the official implementation of paper "[Enhanced Continual Learning of Vision-Language Models with Model Fusion](https://arxiv.org/abs/2503.10705)". We propose Continual Decoupling-Unifying (ConDU), a novel approach, by introducing model fusion into continual learning for VLMs. ConDU maintains a unified model along with task triggers and prototype sets, employing an iterative process of decoupling task-specific models for previous tasks and unifying them with the model for the newly learned task.
 
+## Environment Setup
+
+~~~bash
+conda create -n ConDU python=3.10 -y
+conda activate ConDU
+pip install -r requirements.txt
+pip install flash_attn==2.8.3 --no-build-isolation
+~~~
+
+
 ## Dataset Preparation
 
 We follow the setting of **Multi-domain Task Incremental Learning (MTIL)** Benchmark. There are 11 required datasets to be donwloaded and placed as following structure. You can refers to [datasets.md](./data/datasets.md) for more details.
