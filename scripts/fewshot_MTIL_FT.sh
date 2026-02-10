@@ -22,6 +22,7 @@ for ((i = 0; i < ${#dataset[@]}; i++)); do
     --lr=${lr[i]} \
     --ls 0.2 \
     --iterations 500 \
+    --few_shot 5 \
     --save checkpoint/fewshot_full_finetune/ \
     --session=${i} \
     >> log/fewshot_full_finetune/finetuned.log 2>&1

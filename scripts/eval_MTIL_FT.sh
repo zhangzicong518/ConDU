@@ -3,7 +3,7 @@ set -v
 set -e
 set -x
 
-GPU=0,1
+GPU=0,1,2,3
 dataset=(Aircraft Caltech101 CIFAR100 DTD EuroSAT Flowers Food MNIST OxfordPet StanfordCars SUN397)
 
 for ((i = 0; i < ${#dataset[@]}; i++)); do

@@ -1,0 +1,4 @@
+scripts/test_*.sh
+log/
+checkpoint/
+data/*

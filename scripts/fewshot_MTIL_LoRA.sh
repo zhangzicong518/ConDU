@@ -7,12 +7,12 @@ GPU=0,1,2,3
 dataset=(Aircraft Caltech101 CIFAR100 DTD EuroSAT Flowers Food MNIST OxfordPet StanfordCars SUN397)
 lr=(1e-3 5e-4 2e-3 2e-3 1.5e-4 1e-5 2e-3 1e-3 1.5e-4 2e-3 1.5e-3 1e-3)
 
-if [ ! -d "log/LoRA" ]; then
-    mkdir -p log/LoRA
+if [ ! -d "log/fewshot_lora" ]; then
+    mkdir -p log/fewshot_lora
 fi
 
-if [ ! -d "checkpoint/LoRA" ]; then
-    mkdir -p checkpoint/LoRA
+if [ ! -d "checkpoint/fewshot_lora" ]; then
+    mkdir -p checkpoint/fewshot_lora
 fi
 
 for ((i = 0; i < ${#dataset[@]}; i++)); do
@@ -22,8 +22,9 @@ for ((i = 0; i < ${#dataset[@]}; i++)); do
     --lr=${lr[i]} \
     --ls 0.2 \
     --iterations 500 \
+    --few_shot 5 \
     --lora True \
-    --save checkpoint/LoRA/ \
+    --save checkpoint/fewshot_lora/ \
     --session=${i} \
-    >> log/LoRA/finetuned.log 2>&1
+    >> log/fewshot_lora/finetuned.log 2>&1
 done

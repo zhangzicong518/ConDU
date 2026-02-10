@@ -3,7 +3,7 @@ set -v
 set -e
 set -x
 
-GPU=0,1
+GPU=0,1,2,3
 dataset=(Aircraft Caltech101 CIFAR100 DTD EuroSAT Flowers Food MNIST OxfordPet StanfordCars SUN397)
 
 for ((i = 0; i < ${#dataset[@]}; i++)); do
@@ -13,8 +13,8 @@ for ((i = 0; i < ${#dataset[@]}; i++)); do
         --lora True \
         --eval-datasets=${eval_datasets_current} \
         --session=${i} \
-        --save checkpoint/full_finetune/ \
-        >> log/full_finetune/session_${i}.log 2>&1
+        --save checkpoint/full_lora/ \
+        >> log/full_lora/session_${i}.log 2>&1
 
     eval_datasets_future=$(IFS=,; echo "${dataset[*]:$((i+1))}")
     # semantic voting for prediction
@@ -23,6 +23,6 @@ for ((i = 0; i < ${#dataset[@]}; i++)); do
         --task_agnostic \
         --eval-datasets=${eval_datasets_future} \
         --session=${i} \
-        --save checkpoint/full_finetune/ \
-        >> log/full_finetune/session_${i}.log 2>&1
+        --save checkpoint/full_lora/ \
+        >> log/full_lora/session_${i}.log 2>&1
 done

@@ -16,7 +16,7 @@ def torch_save(model, save_path):
     torch.save(model.cpu(), save_path)
 
 def torch_load(model, save_path, device=None):
-    model = torch.load(save_path)
+    model = torch.load(save_path, weights_only=False)
     if device is not None:
         model = model.to(device)
     return model
@@ -99,8 +99,8 @@ def evaluate(image_classifier, args, val_preprocess):
     pretrained_model = torch_load(model, os.path.join(args.save, "pretrained.pth"))
     pretrained_model = pretrained_model.to(args.device)
     if args.session != 0:
-        store_path = os.path.join(args.save, f"{args.session}")
-        unified_delta_model = troch.load(os.path.join(store_path, "unified.pth"))
+        store_path = os.path.join(args.save, f"session_{args.session}")
+        unified_delta_model = torch.load(os.path.join(store_path, "unified.pth"))
 
         # load the task triggers
         for file in os.listdir(store_path):

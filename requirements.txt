@@ -6,7 +6,6 @@ deepspeed==0.10.0
 editdistance==0.8.1
 ftfy 
 huggingface_hub==0.30.2
-imagenetv2_pytorch==0.1
 matplotlib==3.7.1
 nltk==3.9.1
 numpy
@@ -26,7 +25,7 @@ shortuuid==1.0.13
 tensorboard==2.10.0
 tokenizers
 torch==2.6.0
-torchvision==0.21.0+cu118
+torchvision
 tqdm==4.65.0
 trak==0.1.2
 transformers==4.51.3

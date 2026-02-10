@@ -2,9 +2,7 @@ import clip.clip as clip
 import torch
 from tqdm import tqdm
 
-import sys
-sys.path.append('/data/haoyuan/ZSCL/mtil')
-import datasets, templates, utils
+from .. import datasets, templates, utils
 
 
 class ImageEncoder(torch.nn.Module):
