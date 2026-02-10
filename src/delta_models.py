@@ -1,3 +1,4 @@
+import copy
 import torch
 
 
@@ -63,12 +64,13 @@ class DeltaModel():
                     print(f'Warning: key {key} is present in the pretrained state dict but not in the delta model')
                     continue
                 new_state_dict[key] = pretrained_state_dict[key] + scaling_coef * self.delta_model[key]
+        pretrained_model = copy.deepcopy(pretrained_checkpoint)
         pretrained_model.load_state_dict(new_state_dict, strict=False)
         return pretrained_model
 
 def apply_delta_model(delta_model, pretrained_model):
     """Apply a delta model to a pretrained model."""
-    with torch.no_grad(): 
+    with torch.no_grad():
         new_state_dict = {}
         pretrained_state_dict = pretrained_model.state_dict()
         for key in pretrained_state_dict:
@@ -76,8 +78,9 @@ def apply_delta_model(delta_model, pretrained_model):
                 print(f'Warning: key {key} is present in the pretrained state dict but not in the delta model')
                 continue
             new_state_dict[key] = pretrained_state_dict[key] + delta_model[key]
-    pretrained_model.load_state_dict(new_state_dict, strict=False)
-    return pretrained_model
+    new_model = copy.deepcopy(pretrained_model)
+    new_model.load_state_dict(new_state_dict, strict=False)
+    return new_model
 
 
 def unify_delta_models(delta_models, device=None):

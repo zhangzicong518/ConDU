@@ -2,3 +2,4 @@ scripts/test_*.sh
 log/
 checkpoint/
 data/*
+src/test.py

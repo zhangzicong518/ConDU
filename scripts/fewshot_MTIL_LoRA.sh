@@ -5,7 +5,7 @@ set -x
 
 GPU=0,1,2,3
 dataset=(Aircraft Caltech101 CIFAR100 DTD EuroSAT Flowers Food MNIST OxfordPet StanfordCars SUN397)
-lr=(1e-3 5e-4 2e-3 2e-3 1.5e-4 1e-5 2e-3 1e-3 1.5e-4 2e-3 1.5e-3 1e-3)
+lr=(3e-3 8e-4 1.5e-3 2e-3 3e-4 1e-5 2e-3 2.5e-3 3e-4 2e-3 2e-3 1e-3)
 
 if [ ! -d "log/fewshot_lora" ]; then
     mkdir -p log/fewshot_lora
