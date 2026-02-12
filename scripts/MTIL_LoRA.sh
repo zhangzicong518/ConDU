@@ -9,6 +9,7 @@ lr=(1e-3 5e-4 2e-3 2e-3 1.5e-4 1e-5 2e-3 1e-3 1.5e-4 2e-3 1.5e-3 1e-3)
 
 if [ ! -d "log/full_lora" ]; then
     mkdir -p log/full_lora
+fi
 
 if [ ! -d "checkpoint/full_lora" ]; then
     mkdir -p checkpoint/full_lora
