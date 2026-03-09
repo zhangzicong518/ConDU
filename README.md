@@ -51,10 +51,13 @@ If you want to replicate our results in the paper, you can directly run the corr
   title={Enhanced Continual Learning of Vision-Language Models with Model Fusion},
   author={Gao, Haoyuan and Zhang, Zicong and Wei, Yuqi and Zhao, Linglan and Li, Guilin and Li, Yexin and Kong, Linghe and Huang, Weiran},
   journal={arXiv preprint arXiv:2503.10705},
+  note={Supported by Shanghai Foundation Model Infrastructure Project},
   year={2025}
 }
 ~~~
 
 ## Acknowledgement
+
+Supported by Shanghai Foundation Model Infrastructure Project 2025SHZDZX025G03
 
 Part of our code is built on [ZSCL](https://github.com/Thunderbeee/ZSCL). We thank the authors for sharing their codes.

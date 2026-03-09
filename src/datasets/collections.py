@@ -538,19 +538,11 @@ class StanfordCars(ClassificationDataset):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.name = "stanford cars"
-        """
         self.train_dataset = datasets.StanfordCars(
-            self.location, split="train", download=True, transform=self.preprocess
+            root=self.location, split="train", download=False, transform=self.preprocess
         )
         self.test_dataset = datasets.StanfordCars(
-            self.location, split="test", download=True, transform=self.preprocess
-        )
-        """
-        self.train_dataset = datasets.StanfordCars(
-            root='/data/haoyuan/ZSCL/mtil/data', split='train', download=False, transform=self.preprocess
-        )
-        self.test_dataset = datasets.StanfordCars(
-            root='/data/haoyuan/ZSCL/mtil/data', split='test', download=False, transform=self.preprocess
+            root=self.location, split="test", download=False, transform=self.preprocess
         )
         self.build_dataloader()
         self.classnames = self.train_dataset.classes
