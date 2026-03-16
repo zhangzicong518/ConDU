@@ -3,3 +3,4 @@ log/
 checkpoint/
 data/*
 src/test.py
+ConDU_Ascend/ConDU_Ascend.zip
