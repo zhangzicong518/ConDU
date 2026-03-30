@@ -57,4 +57,10 @@ If you want to replicate our results in the paper, you can directly run the corr
 
 ## Acknowledgement
 
-Part of our code is built on [ZSCL](https://github.com/Thunderbeee/ZSCL). We thank the authors for sharing their codes.
+This project is supported by the National Natural Science Foundation of China (No. 62406192),
+Shanghai Municipal Special Program for Basic Research on General AI Foundation Models (Grant
+No. 2025SHZDZX025G03), Opening Project of the State Key Laboratory of General Artificial In
+telligence (No. SKLAGI2024OP12), the Tencent WeChat Rhino-Bird Focused Research Program,
+Kuaishou Technology, and the SJTU Kunpeng & Ascend Center of Excellence.
+
+Part of our code is built on [ZSCL](https://github.com/Thunderbeee/ZSCL). We also thank the authors for sharing their codes.
