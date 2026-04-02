@@ -21,7 +21,7 @@ for ((i = 0; i < ${#dataset[@]}; i++)); do
     --train-dataset=${dataset[i]} \
     --lr=${lr[i]} \
     --ls 0.2 \
-    --iterations 1 \
+    --iterations 1000 \
     --lora True \
     --save checkpoint/full_lora/ \
     --session=${i} \
